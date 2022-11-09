@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct BreweriesApp: App {
+    @StateObject private var breweriesViewModel = BreweriesListViewModel(service: APIListService())
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BreweriesView(viewModel: breweriesViewModel)
         }
     }
 }
